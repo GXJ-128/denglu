@@ -3,22 +3,40 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>test</title>
+		<style type="text/css">
+			.box{
+				width: 20%;
+				height: 200px;
+				margin:100px auto;
+				border:1px solid #ccc;
+				text-align: center;
+			}
+			#btn{
+				width: 60%;
+			}	
+		</style>
 		<script src="jquery-3.2.1.min.js"></script>
 	</head>
 	<body>
-		<p>
-			username：<input type="text" id="name"/>
-		</p>
-		<p>
-			password：<input type="password" id="pass"/>
-		</p>
-		<input type="button" value="点我" id="btn"/>
+		<div class="box">
+			<p>
+				Id&nbsp;&nbsp;&nbsp;号：<input type="text" id="id" placeholder="请填入正确的一位数Id号"/>
+			</p>
+			<p>
+				用户名：<input type="text" id="name" placeholder="请填入您的用户名"/>
+			</p>
+			<p>
+				密&nbsp;&nbsp;&nbsp;码：<input type="password" id="pass" placeholder="请输入正确的密码"/>
+			</p>
+			<input type="button" value="点我验证" id="btn"/>
+		</div>
 		<script>
 			$('#btn').click(function(){
 				$.ajax({
 					url:'test.php',
-					type:'get',
+					type:'post',
 					data:{
+						id:$('#id').val(),
 						name:$('#name').val(),
 						pass:$('#pass').val(),
 					},

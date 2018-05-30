@@ -1,5 +1,7 @@
 <?php
-	$user=$_POST['id'].$_POST['name'].$_POST['pass'];
+	$id=$_POST['id'];
+	$name=$_POST['name'];
+	$pass=$_POST['pass'];
 	$lists=array(
 		array(
 			'Id'=>'1',
@@ -9,7 +11,7 @@
 		array(
 			'Id'=>'2',
 			'username'=>'lisi',
-			'password'=>'123456'
+			'password'=>'123122'
 		),
 		array(
 			'Id'=>'3',
@@ -19,7 +21,7 @@
 		array(
 			'Id'=>'4',
 			'username'=>'lisi',
-			'password'=>'123456'
+			'password'=>'123111'
 		),
 		array(
 			'Id'=>'5',
@@ -29,12 +31,12 @@
 	);
 	foreach($lists as $key=>$val){ 
 //	echo $key."<hr>";
-		if($user==$val["Id"].$val["username"].$val["password"]){
+		if($id==$val["Id"]&&$name==$val["username"]&&$pass==$val["password"]){
 			echo 'ok';
 			return;
 		}else{
 			echo 'error';
 			return;
-			}
+		}			
 	}
 ?>

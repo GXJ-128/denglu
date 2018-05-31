@@ -30,13 +30,17 @@
 		),
 	);
 	foreach($lists as $key=>$val){ 
-//	echo $key."<hr>";
-		if($id==$val["Id"]&&$name==$val["username"]&&$pass==$val["password"]){
-			echo 'ok';
-			return;
+		if($id==$val["Id"]){
+			if($name==$val["username"]&&$pass==$val["password"]){
+				echo 'ok';
+				return;
+			}else{
+				echo 'error';
+				return;
+			}
 		}else{
-			echo 'error';
+			echo 'no';
 			return;
-		}			
+		}		
 	}
 ?>
